@@ -1,0 +1,1 @@
+﻿get-aduser -filter * -properties Name, PasswordNeverExpires | where { $_.passwordNeverExpires -eq "true" } | where {$_.enabled -eq "true"} | FT | Out-File c:\temp\NotExpiring.txt -Force
