@@ -1,0 +1,1 @@
+﻿import-csv -Path c:\temp\ExportedDupesA.csv | Group-Object -Property 'IP Address' | Where-Object { $_.count -ge 3 } | ForEach-Object { $_.Group } | Select hostname, recordtype, 'IP Address', timestamp | Export-Csv -Path c:\temp\ExportedDupesCleanedA.csv -NoTypeInformation
