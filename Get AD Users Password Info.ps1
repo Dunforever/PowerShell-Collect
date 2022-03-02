@@ -1,0 +1,1 @@
+﻿Get-ADUser -filter * -properties PasswordExpired, PasswordLastSet, PasswordNeverExpires | ft Name, PasswordExpired, PasswordLastSet, PasswordNeverExpires > C:\temp\AllADusersPasswordInfo.txt
