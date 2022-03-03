@@ -1,0 +1,1 @@
+﻿$Server = Read-Host -Prompt 'Input your target IP/host' ; 80, 135, 445, 3389, 5985 | % {$test= new-object system.Net.Sockets.TcpClient; $wait = $test.beginConnect("$Server",$_,$null,$null); ($wait.asyncwaithandle.waitone(250,$false)); if ($test.Connected){echo "$_ open"}else{echo "$_ closed"}} | select-string " "
